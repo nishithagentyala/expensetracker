@@ -1,0 +1,62 @@
+.transactionlist {
+  margin: 25px 0px;
+}
+.transactionlist h2 {
+  border-bottom: 1px solid black;
+  margin: 20px 0px;
+}
+.list {
+  list-style: none;
+  cursor: pointer;
+}
+.list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: rgb(228, 228, 215);
+  position: relative;
+}
+.minus {
+  border-right: 5px solid red;
+}
+.plus {
+  border-right: 5px solid green;
+}
+.list:hover .delete {
+  opacity: 1;
+}
+.delete {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  left: 0;
+  transform: translate(-100%, -50%);
+  top: 50%;
+  text-align: center;
+  background: red;
+  opacity: 0;
+  padding: 3px;
+}
+.addtrans {
+  margin: 20px 0px;
+}
+.addtrans h2 {
+  border-bottom: 1px solid black;
+}
+.form-control {
+  margin: 10px 0px;
+}
+.addtrans input {
+  width: 100%;
+}
+.addtrans button {
+  width: 100%;
+  margin: 10px 0px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  background-color: lightblue;
+}
