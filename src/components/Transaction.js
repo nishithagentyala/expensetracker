@@ -1,7 +1,9 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 const Transaction = ({ transaction }) => {
+  const { deleteTransaction } = useContext(GlobalContext);
   const sign = transaction.amount < 0 ? "-" : "+";
+  localStorage.setItem(transaction.text, transaction.id);
   return (
     <div>
       <li className={sign === "-" ? "minus" : "plus"}>
@@ -10,7 +12,12 @@ const Transaction = ({ transaction }) => {
           {sign}
           Rs.{transaction.amount}
         </span>
-        <button className="delete">X</button>
+        <button
+          className="delete"
+          onClick={() => deleteTransaction(transaction.id)}
+        >
+          X
+        </button>
       </li>
     </div>
   );

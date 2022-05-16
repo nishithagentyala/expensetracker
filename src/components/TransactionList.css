@@ -23,7 +23,7 @@
 .plus {
   border-right: 5px solid green;
 }
-.list:hover .delete {
+.list li:hover .delete {
   opacity: 1;
 }
 .delete {
@@ -38,6 +38,10 @@
   background: red;
   opacity: 0;
   padding: 3px;
+  transition: opacity 0.3s ease;
+}
+.delete:focus {
+  outline: 0;
 }
 .addtrans {
   margin: 20px 0px;
@@ -59,4 +63,7 @@
   border: none;
   padding: 5px;
   background-color: lightblue;
+}
+input {
+  padding: 5px;
 }
