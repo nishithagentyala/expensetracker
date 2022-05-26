@@ -67,3 +67,11 @@
 input {
   padding: 5px;
 }
+.edit {
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+.list li:hover .edit {
+  display: flex;
+}

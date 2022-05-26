@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./TransactionList.css";
 import { GlobalContext } from "../context/GlobalState";
 const Addtransactions = () => {
@@ -13,7 +13,10 @@ const Addtransactions = () => {
       amount: +amount,
     };
     addTransaction(newTransaction);
+    setText("");
+    setAmount(0);
   };
+
   return (
     <div className="addtrans">
       <h2>Add new transaction</h2>
@@ -21,6 +24,7 @@ const Addtransactions = () => {
         <div className="form-control">
           <label htmlFor="Text">Text</label>
           <input
+            className="text"
             type="text"
             value={text}
             onChange={(e) => {
@@ -32,6 +36,7 @@ const Addtransactions = () => {
         <div className="form-control">
           <label htmlFor="Amount">Amount</label>
           <input
+            className="amount"
             type="number"
             value={amount}
             onChange={(e) => {
@@ -40,7 +45,7 @@ const Addtransactions = () => {
             placeholder="enter Amount..."
           />
         </div>
-        <button>Add Transaction</button>
+        <button className="add">Add Transaction</button>
       </form>
     </div>
   );
