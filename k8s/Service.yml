@@ -1,1 +1,16 @@
 
+apiVersion: v1
+kind: Service
+metadata:
+  name: expensetracker-service
+  namespace: expensetracker
+
+spec:
+  type: LoadBalancer
+
+  selector:
+    app: expensetracker
+
+  ports:
+    - port: 80
+      targetPort: 80
