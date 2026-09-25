@@ -22,7 +22,7 @@ const Transaction = ({ transaction }) => {
         </button>
         <button
           className="edit"
-          onClick={() => editTransaction(transaction.id)}
+          onClick={() => editTransaction()}
         >
           <FaEdit />
         </button>
