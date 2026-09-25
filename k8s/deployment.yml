@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: expense-tracker
-  namespace: expense-tracker
+  name: expensetracker
+  namespace: expensetracker
 
 spec:
   replicas: 2
 
   selector:
     matchLabels:
-      app: expense-tracker
+      app: expensetracker
 
   template:
     metadata:
       labels:
-        app: expense-tracker
+        app: expensetracker
 
     spec:
       containers:
