@@ -8,7 +8,7 @@ const Addtransactions = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const newTransaction = {
-      id: Math.floor(Math.random() * 100000000),
+     id: crypto.randomUUID(),
       text,
       amount: +amount,
     };
