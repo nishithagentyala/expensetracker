@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer,useMemo } from "react";
 import AppReducer from "./AppReducer";
 const initialState = {
   transactions: [],
@@ -19,14 +19,19 @@ export const GlobalProvider = ({ children }) => {
       payload: transaction,
     });
   }
+const value = useMemo(
+  () => ({
+    transactions: state.transactions,
+    deleteTransaction,
+    addTransaction,
+  }),
+  [state.transactions]
+);
+
 
   return (
     <GlobalContext.Provider
-      value={{
-        transactions: state.transactions,
-        deleteTransaction,
-        addTransaction,
-      }}
+      value={value}
     >
       {children}
     </GlobalContext.Provider>
